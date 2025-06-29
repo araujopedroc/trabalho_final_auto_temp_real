@@ -69,7 +69,8 @@ def on_message(client, userdata, msg):
                 },
                 "time": datetime.utcnow().isoformat(),
                 "fields": {
-                    "estado": estado  # string com 'baixo', 'normal' ou 'alto'
+                    "estado": estado,  # string ('baixo', 'normal', 'alto')
+                    "nivel": float(valor)  # valor numérico do nível (em metros)
                 }
             })
         # Envia para InfluxDB
